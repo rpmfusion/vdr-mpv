@@ -2,13 +2,13 @@
 
 Name:           vdr-%{pname}
 Version:        0.0.4
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        A mpv player plugin for VDR
-Group:          Applications/Multimedia
 License:        AGPLv3+
 URL:            http://projects.vdr-developer.org/projects/plg-mpv
 Source0:        http://projects.vdr-developer.org/git/vdr-plugin-mpv.git/snapshot/vdr-plugin-mpv-%{version}.tar.bz2 
 
+BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= 2.0.0
 BuildRequires:  libmpv-devel >= 0.9.2
 BuildRequires:  libxcb-devel
@@ -38,6 +38,9 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Thu Oct 11 2018 Martin Gansser <martinkg@fedoraproject.org> - 0.0.4-8
+- Add BR gcc-c++
+
 * Sun Aug 19 2018 Leigh Scott <leigh123linux@googlemail.com> - 0.0.4-7
 - Rebuilt for Fedora 29 Mass Rebuild binutils issue
 
