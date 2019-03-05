@@ -10,7 +10,7 @@ Source0:        http://projects.vdr-developer.org/git/vdr-plugin-mpv.git/snapsho
 
 BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= 2.0.0
-BuildRequires:  libmpv-devel >= 0.9.2
+BuildRequires:  mpv-libs-devel
 BuildRequires:  libxcb-devel
 BuildRequires:  xcb-util-image-devel
 BuildRequires:  xcb-util-keysyms-devel
