@@ -2,7 +2,7 @@
 
 Name:           vdr-%{pname}
 Version:        0.0.4
-Release:        18%{?dist}
+Release:        19%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
 URL:            http://projects.vdr-developer.org/projects/plg-mpv
@@ -38,6 +38,9 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Mon Jan 04 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.0.4-19
+- Rebuilt for new VDR API version
+
 * Mon Nov 23 2020 Leigh Scott <leigh123linux@gmail.com> - 0.0.4-18
 - Rebuild for new mpv
 
