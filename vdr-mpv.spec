@@ -25,7 +25,7 @@ A mpv player plugin for VDR
 %setup -qn vdr-plugin-%{pname}-%{version}
 
 %build
-make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
+make CFLAGS="%{optflags} -fPIC" CXXFLAGS="-std=gnu++14 %{optflags} -fPIC" %{?_smp_mflags} all
 
 %install
 %make_install
@@ -40,6 +40,7 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
 %changelog
 * Mon Jan 04 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.0.4-19
 - Rebuilt for new VDR API version
+- Force C++14 as this code is not C++17 ready, needed for gcc11
 
 * Mon Nov 23 2020 Leigh Scott <leigh123linux@gmail.com> - 0.0.4-18
 - Rebuild for new mpv
