@@ -6,7 +6,7 @@ Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
 URL:            https://github.com/ua0lnj/vdr-plugin-mpv
-Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz 
+Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= 2.0.0
