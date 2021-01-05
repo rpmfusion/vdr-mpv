@@ -1,12 +1,12 @@
 %global pname   mpv
 
 Name:           vdr-%{pname}
-Version:        0.0.4
-Release:        19%{?dist}
+Version:        0.2.1
+Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
-URL:            http://projects.vdr-developer.org/projects/plg-mpv
-Source0:        http://projects.vdr-developer.org/git/vdr-plugin-mpv.git/snapshot/vdr-plugin-mpv-%{version}.tar.bz2 
+URL:            https://github.com/ua0lnj/vdr-plugin-mpv
+Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz 
 
 BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= 2.0.0
@@ -19,7 +19,9 @@ Requires:       vdr(abi)%{?_isa} = %{vdr_apiversion}
 Requires:       lxrandr
 
 %description 
-A mpv player plugin for VDR
+vdr-mpv is a fork of the vdr-play plugin from Johns. It uses libmpv for playing
+media (video, audio, picture) in VDR and also displays the VDR OSD (On Screen
+Display) during playback.
 
 %prep
 %setup -qn vdr-plugin-%{pname}-%{version}
@@ -38,6 +40,10 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="-std=gnu++14 %{optflags} -fPIC" %{?_sm
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Tue Jan 05 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.2.1-1
+- Use fork because its under maintenance
+- Update to 0.2.1
+
 * Mon Jan 04 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.0.4-19
 - Rebuilt for new VDR API version
 - Force C++14 as this code is not C++17 ready, needed for gcc11
