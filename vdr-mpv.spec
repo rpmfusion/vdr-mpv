@@ -1,7 +1,7 @@
 %global pname   mpv
 
 Name:           vdr-%{pname}
-Version:        0.2.2
+Version:        0.3.0
 Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
@@ -24,10 +24,10 @@ media (video, audio, picture) in VDR and also displays the VDR OSD (On Screen
 Display) during playback.
 
 %prep
-%setup -qn vdr-plugin-%{pname}-%{version}
+%autosetup -p1 -n vdr-plugin-%{pname}-%{version}
 
 %build
-make CFLAGS="%{optflags} -fPIC" CXXFLAGS="-std=gnu++14 %{optflags} -fPIC" %{?_smp_mflags} all
+make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
 
 %install
 %make_install
@@ -40,6 +40,9 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="-std=gnu++14 %{optflags} -fPIC" %{?_sm
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Sat Jan 16 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.3.0-1
+- Update to 0.3.0
+
 * Wed Jan 06 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.2.2-1
 - Update to 0.2.2
 
