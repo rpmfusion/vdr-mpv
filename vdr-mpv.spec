@@ -12,6 +12,7 @@ BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= 2.0.0
 BuildRequires:  mpv-libs-devel
 BuildRequires:  libxcb-devel
+BuildRequires:	libX11-devel
 BuildRequires:  xcb-util-image-devel
 BuildRequires:  xcb-util-keysyms-devel
 BuildRequires:  xcb-util-wm-devel
@@ -42,6 +43,7 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
 %changelog
 * Sat Jan 16 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.3.0-1
 - Update to 0.3.0
+- Add BR libX11-devel
 
 * Wed Jan 06 2021 Martin Gansser <martinkg@fedoraproject.org> - 0.2.2-1
 - Update to 0.2.2
