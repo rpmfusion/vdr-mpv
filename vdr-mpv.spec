@@ -1,7 +1,7 @@
 %global pname   mpv
 
 Name:           vdr-%{pname}
-Version:        1.1.1
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
@@ -41,6 +41,9 @@ make CFLAGS="%{optflags} -fPIC" CXXFLAGS="%{optflags} -fPIC" %{?_smp_mflags} all
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Wed Apr 14 2021 Martin Gansser <martinkg@fedoraproject.org> - 1.2.0-1
+- Update to 1.2.0
+
 * Sat Mar 27 2021 Martin Gansser <martinkg@fedoraproject.org> - 1.1.1-1
 - Update to 1.1.1
 
