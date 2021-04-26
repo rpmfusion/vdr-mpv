@@ -11,6 +11,7 @@ Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/v%{version}.tar
 BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= 2.0.0
 BuildRequires:  mpv-libs-devel
+BuildRequires:  libdrm-devel
 BuildRequires:  libxcb-devel
 BuildRequires:	libX11-devel
 BuildRequires:  xcb-util-image-devel
@@ -45,6 +46,7 @@ DRM_CFLAGS="$(pkg-config --cflags libdrm)"
 * Mon Apr 26 2021 Martin Gansser <martinkg@fedoraproject.org> - 1.2.3-1
 - Update to 1.2.3
 - Add DRM_CFLAGS
+- Add BR libdrm-devel
 
 * Wed Apr 14 2021 Martin Gansser <martinkg@fedoraproject.org> - 1.2.0-1
 - Update to 1.2.0
