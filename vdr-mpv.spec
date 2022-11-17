@@ -10,7 +10,7 @@
 
 Name:           vdr-%{pname}
 Version:        1.3.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
 URL:            https://github.com/ua0lnj/vdr-plugin-mpv
@@ -51,6 +51,9 @@ DRM_CFLAGS="$(pkg-config --cflags libdrm)"
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Thu Nov 17 2022 Vitaly Zaitsev <vitaly@easycoding.org> - 1.3.4-3
+- Rebuilt due to mpv update.
+
 * Mon Aug 08 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1.3.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
