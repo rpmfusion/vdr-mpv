@@ -6,12 +6,12 @@
 %endif
 
 Name:           vdr-%{pname}
-Version:        1.4.2
+Version:        1.4.4
 Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
 URL:            https://github.com/ua0lnj/vdr-plugin-mpv
-Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc-c++
 BuildRequires:  vdr-devel >= %{vdr_version}
@@ -48,6 +48,9 @@ DRM_CFLAGS="$(pkg-config --cflags libdrm)"
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Mon Jul 17 2023 Martin Gansser <martinkg@fedoraproject.org> - 1.4.4-1
+- Update to 1.4.4
+
 * Wed Mar 29 2023 Martin Gansser <martinkg@fedoraproject.org> - 1.4.2-1
 - Update to 1.4.2
 
