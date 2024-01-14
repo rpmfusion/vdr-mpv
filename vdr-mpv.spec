@@ -6,7 +6,7 @@
 %endif
 
 Name:           vdr-%{pname}
-Version:        1.5.0
+Version:        1.5.2
 Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPLv3+
@@ -49,6 +49,9 @@ DRM_CFLAGS="$(pkg-config --cflags libdrm)"
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Sun Jan 14 2024 Martin Gansser <martinkg@fedoraproject.org> - 1.5.2-1
+- Update to 1.5.2
+
 * Tue Jan 09 2024 Martin Gansser <martinkg@fedoraproject.org> - 1.5.0-1
 - Rebuilt for new VDR API version
 - Add BR gettext for rawhide
