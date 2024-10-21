@@ -1,15 +1,18 @@
 %global pname   mpv
-# version we want build against
+# version we want to build against
 %global vdr_version 2.6.3
-%if 0%{?fedora} >= 40
+# Set vdr_version based on Fedora version
+%if 0%{?fedora} >= 42
+%global vdr_version 2.7.2
+%elif 0%{?fedora} >= 40
 %global vdr_version 2.6.9
 %endif
 
 Name:           vdr-%{pname}
-Version:        1.7.3
-Release:        1%{?dist}
+Version:        1.7.4
+Release:        2%{?dist}
 Summary:        A mpv player plugin for VDR
-License:        AGPLv3+
+License:        AGPL-3.0-or-later
 URL:            https://github.com/ua0lnj/vdr-plugin-mpv
 Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/refs/tags/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
@@ -49,6 +52,12 @@ DRM_CFLAGS="$(pkg-config --cflags libdrm)"
 %{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
 
 %changelog
+* Mon Oct 21 2024 Martin Gansser <martinkg@fedoraproject.org> - 1.7.4-2
+- Rebuilt for new VDR API version 2.7.3
+
+* Mon Sep 30 2024 Martin Gansser <martinkg@fedoraproject.org> - 1.7.4-1
+- Update to 1.7.4
+
 * Fri Jul 26 2024 Martin Gansser <martinkg@fedoraproject.org> - 1.7.3-1
 - Rebuilt for new VDR API version 2.6.9
 - Update to 1.7.3
