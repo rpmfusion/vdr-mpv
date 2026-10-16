@@ -1,20 +1,10 @@
 %global pname   mpv
-
-# Set vdr_version based on Fedora version
-# Default
-%global vdr_version 2.7.7
-
-%if 0%{?fedora} == 43
-%global vdr_version 2.7.7
-%elif 0%{?fedora} == 44
-%global vdr_version 2.8.1
-%elif 0%{?fedora} > 44
-%global vdr_version 2.8.2
-%endif
+# The plugin ABI is expressed through vdr(abi); don't export private .so provides.
+%global __provides_exclude_from ^%{vdr_libdir}/.*\\.so.*$
 
 Name:           vdr-%{pname}
-Version:        1.8.2
-Release:        7%{?dist}
+Version:        1.8.4
+Release:        1%{?dist}
 Summary:        A mpv player plugin for VDR
 License:        AGPL-3.0-or-later
 URL:            https://github.com/ua0lnj/vdr-plugin-mpv
@@ -22,7 +12,7 @@ Source0:        https://github.com/ua0lnj/vdr-plugin-mpv/archive/refs/tags/v%{ve
 
 BuildRequires:  gcc-c++
 BuildRequires:  gettext
-BuildRequires:  vdr-devel >= %{vdr_version}
+BuildRequires:  vdr-devel
 BuildRequires:  mpv-libs-devel
 BuildRequires:  libdrm-devel
 BuildRequires:  libxcb-devel
@@ -53,9 +43,13 @@ DRM_CFLAGS="$(pkg-config --cflags libdrm)"
 %files -f %{name}.lang
 %doc README*
 %license AGPL-3.0
-%{vdr_plugindir}/libvdr-*.so.%{vdr_apiversion}
+%{vdr_libdir}/libvdr-%{pname}.so.%{vdr_apiversion}
 
 %changelog
+* Fri Oct 16 2026 Martin Gansser <martinkg@fedoraproject.org> - 1.8.4-1
+- Rebuilt for new VDR 2.8.3 API version 14
+- Update to 1.8.4
+
 * Sun Aug 02 2026 RPM Fusion Release Engineering <leigh123linux@rpmfusion.org> - 1.8.2-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_45_Mass_Rebuild
 
